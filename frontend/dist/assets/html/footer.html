@@ -1,0 +1,108 @@
+<!--content of element footer -->
+<div class="two-columns">
+    <div class="left-column">
+        <div class="title-sect">
+            <h2 class="">Gaming</h2>
+            <div class="socials">
+                <img src="../assets/img/temp-image.jpg" alt="Social">
+                <img src="../assets/img/temp-image.jpg" alt="Social">
+            </div>
+        </div>
+
+        <div class="main-sect two-columns">
+            <div class="little-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../vr-ar/vr-ar.html">VR/AR</a></li>
+                    <li><a href="../hardware/hardware.html">Hardware</a></li>
+                    <li><a href="../software/software.html">Software</a></li>
+                    <li><a href="../history/history.html">History</a></li>
+                </ul>
+            </div>
+
+
+            <div class="address-forum">
+                <address>
+                    Munzstrasse 24<br>
+                    47051 Duisburg<br>
+                    Germany
+                </address>
+
+                <a href="#" class="forum-btn">Forum --></a>
+            </div>
+
+        </div>
+
+        <div class="bottom-sect">
+            <p>© 2023 Gaming. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <form>
+            <h2>Contact us</h2>
+            <div class="field first-name" data-required="required">
+                <label for="first-name">First Name</label><input required="required" type="text" name="first-name"
+                                                                 id="first-name">
+            </div>
+
+            <div class="field last-name">
+                <label for="last-name">Last Name</label><input type="text" name="last-name" id="last-name">
+            </div>
+
+            <div class="field email" data-required="required">
+                <label for="email">E-Mail</label><input required="required" type="email" name="email" id="email">
+
+                <!--                <script>-->
+                <!--                    const emailInput = document.querySelector('#email');-->
+                <!--                    let typingTimer;-->
+
+                <!--                    emailInput.addEventListener('input', () => {-->
+                <!--                        clearTimeout(typingTimer);-->
+                <!--                        typingTimer = setTimeout(() => {-->
+                <!--                            // check if the email input is valid or not-->
+                <!--                            if (emailInput.checkValidity()) {-->
+                <!--                                // email input is valid-->
+                <!--                                emailInput.style.color = 'lime';-->
+                <!--                            } else {-->
+                <!--                                // email input is not valid-->
+                <!--                                emailInput.style.color = 'red';-->
+                <!--                            }-->
+                <!--                        }, 1000);-->
+                <!--                    });-->
+                <!--                </script>-->
+            </div>
+
+            <div class="field number">
+                <label for="number">Phone Number</label><input type="tel" name="number" id="number">
+            </div>
+
+            <div class="field subject" data-required="required">
+                <label for="subject">Subject</label><input required="required" type="text" name="subject" id="subject">
+            </div>
+
+            <div class="field message" data-required="required">
+                <label for="message">Message</label><textarea required="required" name="message"
+                                                              id="message"></textarea>
+            </div>
+
+            <button type="submit" class="submit">Submit --></button>
+
+            <script>
+                let fields = document.querySelectorAll('.field');
+
+                fields.forEach(field => {
+                    let input = field.querySelector('*:nth-child(2)');
+                    // if content gets typed in the box
+                    input.addEventListener('input', () => {
+                        if (input.value.length > 0) {
+                            field.classList.add('has-content');
+                        } else {
+                            field.classList.remove('has-content');
+                        }
+                    });
+                });
+            </script>
+        </form>
+    </div>
+</div>

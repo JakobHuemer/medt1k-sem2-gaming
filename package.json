@@ -13,6 +13,7 @@
     "nodemon": "^2.0.21"
   },
   "dependencies": {
-    "connect-history-api-fallback": "^2.0.0"
+    "connect-history-api-fallback": "^2.0.0",
+    "fs": "^0.0.1-security"
   }
 }

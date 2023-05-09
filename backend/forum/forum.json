@@ -1,0 +1,48 @@
+{
+  "topics": {
+    "234": {
+      "postId": 234,
+      "title": "Medientechnik ist cool",
+      "description": "N/A | Ich finde Medientechnik ist das coolste Fach in der Schule! Wer findet das auch so?",
+      "date": "2023.5.22.23.54.3",
+      "dateFormat": "YEAR.MONTH.DAY.HOUR.MINUTE.SECOND",
+      "author": "randomName6969",
+      "upvotes": 23,
+      "views": 234,
+
+      "comments": {
+        "5768": {
+          "author": "AnotherUser23",
+          "body": "Ich find das auch echt heftig",
+          "commentId": "234.5768",
+          "date": "2023.5.23.14.34.6",
+          "upvotes": 2,
+          "comments": {
+            "....": "....."
+          }
+        },
+        "3432": {
+          "author": "SimpleUsEr..3",
+          "body": "Das ist das besste was ich je gelesen habe! Einfach tolll!",
+          "commentId": "234.3432",
+          "date": "2023.5.32.14.56.34",
+          "comments": {
+            "6534": {
+              "author": "SimpleUsEr..3",
+              "body": "Das ist das besste was ich je gelesen habe! Einfach tolll!",
+              "commentId": "234.3432.6543",
+              "commentIdFormat": "ParentId.NextParentId. ... OwnId",
+              "date": "2023.5.32.14.56.34",
+              "upvotes" : 56,
+              "comments": {
+                "id": {
+                  "..." : "..."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -8,8 +8,13 @@
     <title>History</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./history.js" type="module"></script>
+    <script src="../assets/script/default.js" type="module" defer></script>
 </head>
 <body>
+
+<button onclick="$('nav').toggleClass('active')" id="nav-button">
+    <span class="stripe"></span><span class="stripe stripe-middle"></span><span class="stripe"></span>
+</button>
 
 <nav>
     <script>
@@ -20,6 +25,12 @@
 <main>
 
 </main>
+
+<footer>
+    <script>
+        $('footer').load('../assets/html/footer.html');
+    </script>
+</footer>
 
 </body>
 </html>

@@ -9,16 +9,24 @@
     <title>Home</title>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
-  <script type="module" crossorigin src="/assets/main-1da7ac4c.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/default-447ce3e4.js">
-  <link rel="stylesheet" href="/assets/default-3b3b5b01.css">
+    
+  <script type="module" crossorigin src="/assets/main-39b6a07e.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/default-8ace8ac1.js">
+  <link rel="stylesheet" href="/assets/default-ee9d76ec.css">
 </head>
 <body>
 
-<script>
-    $('body').load('./assets/html/nav.html');
-</script>
+<button onclick="$('nav').toggleClass('active')" id="nav-button">
+    <span class="stripe"></span><span class="stripe stripe-middle"></span><span class="stripe"></span>
+</button>
+
+<nav>
+    <script>
+        $('nav').load('./assets/html/nav.html');
+    </script>
+</nav>
 
 
 <main>
@@ -29,45 +37,77 @@
             harum repellendus saepe voluptatem. Dignissimos, ex!</p>
     </div>
 
-    <div class="introduction">
-        <h2>The Introduction</h2>
+    <div class="introduction height-screen">
+        <h2 class="depth glitch">The Introduction</h2>
         <div class="two-columns">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur autem dolore eaque earum eius
                 est ex excepturi expedita facilis fuga fugiat harum illo ipsa ipsam laborum nesciunt numquam, pariatur
                 perferendis quasi quibusdam quidem quod rerum, sapiente similique tempora voluptates? Lorem ipsum dolor
                 sit amet, consectetur adipisicing elit. Deserunt, odit! Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit. Aliquid consectetur eius eligendi excepturi facere fugiat illo itaque</p>
-            <img src="" alt="Gaming">
+            <img src="/assets/temp-image-6ee17711.jpg" alt="Gaming">
         </div>
     </div>
 
-    <div class="gametypes">
-        <h2>Types of Games</h2>
-
+    <div class="gametypes height-screen section">
+        <h2 class="glitch">Types of Games</h2>
 
         <div class="three-columns">
-            <div class="card"><img src="" alt="Minecraft">
-                <div class="h3">Game xyz</div>
+
+            <div class="card">
+                <img src="/assets/temp-image-6ee17711.jpg" alt="Minecraft">
+                <h3>Game xyz</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta expedita facere, facilis
+                    incidunt iste nobis quidem quos veniam? Aliquid cum distinctio eum mollitia numquam odio
+                    perspiciatis possimus sed similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Impedit, laborum!</p>
+            </div>
+
+            <div class="card">
+                <img src="/assets/temp-image-6ee17711.jpg" alt="Minecraft">
+                <h3>Game xyz</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta expedita facere, facilis
+                    incidunt iste nobis quidem quos veniam? Aliquid cum distinctio eum mollitia numquam odio
+                    perspiciatis possimus sed similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Impedit, laborum!</p>
+            </div>
+
+            <div class="card">
+                <img src="/assets/temp-image-6ee17711.jpg" alt="Minecraft">
+                <h3>Game xyz</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta expedita facere, facilis
                     incidunt iste nobis quidem quos veniam? Aliquid cum distinctio eum mollitia numquam odio
                     perspiciatis possimus sed similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Impedit, laborum!</p>
             </div>
         </div>
+    </div>
 
+    <div class="popular-games height-screen section">
+        <h2 class="glitch">Popular Games</h2>
         <div class="three-columns">
-            <div class="card"><img src="" alt="Minecraft">
-                <div class="h3">Game xyz</div>
+
+            <div class="card">
+                <img src="/assets/temp-image-6ee17711.jpg" alt="Minecraft">
+                <h3>Game xyz</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta expedita facere, facilis
                     incidunt iste nobis quidem quos veniam? Aliquid cum distinctio eum mollitia numquam odio
                     perspiciatis possimus sed similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Impedit, laborum!</p>
             </div>
-        </div>
 
-        <div class="three-columns">
-            <div class="card"><img src="" alt="Minecraft">
-                <div class="h3">Game xyz</div>
+            <div class="card">
+                <img src="/assets/temp-image-6ee17711.jpg" alt="Minecraft">
+                <h3>Game xyz</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta expedita facere, facilis
+                    incidunt iste nobis quidem quos veniam? Aliquid cum distinctio eum mollitia numquam odio
+                    perspiciatis possimus sed similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Impedit, laborum!</p>
+            </div>
+
+            <div class="card">
+                <img src="/assets/temp-image-6ee17711.jpg" alt="Minecraft">
+                <h3>Game xyz</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta expedita facere, facilis
                     incidunt iste nobis quidem quos veniam? Aliquid cum distinctio eum mollitia numquam odio
                     perspiciatis possimus sed similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -77,6 +117,12 @@
     </div>
 
 </main>
+
+<footer>
+    <script>
+        $('footer').load('./assets/html/footer.html');
+    </script>
+</footer>
 
 </body>
 </html>

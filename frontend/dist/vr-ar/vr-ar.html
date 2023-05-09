@@ -8,18 +8,98 @@
     <title>AR/VR</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
-  <script type="module" crossorigin src="/assets/default-447ce3e4.js"></script>
-  <link rel="stylesheet" href="/assets/default-3b3b5b01.css">
+    
+  <script type="module" crossorigin src="/assets/default-8ace8ac1.js"></script>
+  <link rel="stylesheet" href="/assets/default-ee9d76ec.css">
 </head>
 <body>
 
-<script>
-    $('body').load('../assets/html/nav.html');
-</script>
+<button onclick="$('nav').toggleClass('active')" id="nav-button">
+    <span class="stripe"></span><span class="stripe stripe-middle"></span><span class="stripe"></span>
+</button>
+
+<nav>
+    <script>
+        $('nav').load('../assets/html/nav.html');
+    </script>
+</nav>
 
 <main>
 
+    <div class="swiper-container-temp">
+        <h1>Virtual Reality / Augumented Reality</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur harum quaerat voluptatem! Deserunt ea
+            eum ipsam laboriosam numquam perspiciatis rerum.</p>
+    </div>
+
+    <div class="introduction">
+        <h2>The Introduction</h2>
+        <div class="subintro">
+            <h3>Virtual Reality</h3>
+            <div class="two-columns">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur corporis dicta
+                    dignissimos, fugit harum nam non omnis, quas quidem quisquam recusandae sequi. A alias architecto
+                    atque dolorem dolores dolorum hic ipsum iste odio quod repellendus sapiente, suscipit tempora
+                    vel?</p>
+                <img src="/assets/temp-image-6ee17711.jpg" alt="Gaming">
+            </div>
+        </div>
+        <div class="subintro">
+            <h3>Augumented Reality</h3>
+            <div class="two-columns column-reverse">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In inventore libero magni molestias nam
+                    nostrum rem? Alias beatae, blanditiis consequuntur eos exercitationem perferendis tempora ut vitae.
+                    Ab accusantium aspernatur earum eius, eum id illo in laudantium magnam, nesciunt, odit quidem
+                    voluptates. Animi, architecto atque autem commodi illo illum ipsa laboriosam, necessitatibus nisi
+                    possimus sapiente voluptate.</p>
+                <img src="/assets/temp-image-6ee17711.jpg" alt="Gaming">
+            </div>
+        </div>
+    </div>
+
+    <div class="glasses section">
+        <h2>VR Glasses</h2>
+        <img src="/assets/temp-image-6ee17711.jpg" alt="VR Glasses">
+        <div class="description">Dual Cam</div>
+        <div class="description">Screen</div>
+        <div class="description">Speakers</div>
+    </div>
+
+
+    <div class="games-supporting-vr-ar section">
+        <h2>Games that use/support VR/AR</h2>
+        <div class="three-columns">
+            <div class="card">
+                <img src="/assets/temp-image-6ee17711.jpg" alt="">
+                <h3>Minecraft</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, aliquam animi aperiam asperiores
+                    blanditiis cupiditate debitis deleniti eius esse expedita explicabo fuga fugit id laboriosam laborum
+                    libero maxime natus nobis nostrum porro quaerat quia quis, reprehenderit repudiandae, rerum
+                    temporibus vel voluptatibus! Animi exercitationem explicabo ipsa odio possimus quae sapiente
+                    veritatis!</p>
+            </div>
+
+
+            <div class="card">
+                <img src="/assets/temp-image-6ee17711.jpg" alt="">
+                <h3>Beat Saber</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, alias consequatur consequuntur
+                    delectus, eaque facilis fugit incidunt ipsum labore necessitatibus, nostrum omnis perferendis quis
+                    quos repellendus rerum sequi vel. Consequuntur deserunt dolor eius eos iusto labore ratione vel!
+                    Commodi, similique.</p>
+            </div>
+        </div>
+    </div>
+
 </main>
+
+
+<footer>
+    <script>
+        $('footer').load('../assets/html/footer.html');
+    </script>
+</footer>
+
 
 </body>
 </html>

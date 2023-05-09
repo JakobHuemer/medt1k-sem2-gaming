@@ -8,8 +8,13 @@
     <title>AR/VR</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./vr-ar.js" type="module"></script>
+    <script src="../assets/script/default.js" type="module" defer></script>
 </head>
 <body>
+
+<button onclick="$('nav').toggleClass('active')" id="nav-button">
+    <span class="stripe"></span><span class="stripe stripe-middle"></span><span class="stripe"></span>
+</button>
 
 <nav>
     <script>
@@ -50,7 +55,7 @@
         </div>
     </div>
 
-    <div class="glasses">
+    <div class="glasses section">
         <h2>VR Glasses</h2>
         <img src="../assets/img/temp-image.jpg" alt="VR Glasses">
         <div class="description">Dual Cam</div>
@@ -59,7 +64,7 @@
     </div>
 
 
-    <div class="games-supporting-vr-ar">
+    <div class="games-supporting-vr-ar section">
         <h2>Games that use/support VR/AR</h2>
         <div class="three-columns">
             <div class="card">
@@ -85,6 +90,14 @@
     </div>
 
 </main>
+
+
+<footer>
+    <script>
+        $('footer').load('../assets/html/footer.html');
+    </script>
+</footer>
+
 
 </body>
 </html>
