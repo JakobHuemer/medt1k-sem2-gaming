@@ -5,7 +5,7 @@ import path from 'path';
 const app = express();
 const port = 3000;
 const webApp = express();
-const webPort = 80;
+const webPort = 8080;
 
 // create http server from webApp
 const server = http.createServer(webApp);
