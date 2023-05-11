@@ -1,6 +1,5 @@
-class UniqueArray {
+export class UniqueArray {
 
-    array
     constructor() {
         this.array = [];
     }
@@ -33,7 +32,7 @@ class UniqueArray {
 
 
     length() {
-        return this.array.length();
+        return this.array.length
     }
 
     isEmpty() {

@@ -5,7 +5,7 @@ import path from 'path';
 const app = express();
 const port = 3000;
 const webApp = express();
-const webPort = 8080;
+const webPort = 80;
 
 // create http server from webApp
 const server = http.createServer(webApp);
@@ -14,6 +14,10 @@ const server = http.createServer(webApp);
 
 
 // webApp.use(history());
+
+// TODO: If someone tries to inject a script, send them to the 404 page and send a report to the server
+//  which the owner will then receive to his inbox if he loggs in next time
+
 
 webApp.use(express.static('./frontend/dist'));
 

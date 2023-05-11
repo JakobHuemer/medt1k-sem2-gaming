@@ -1,0 +1,232 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+
+
+class PostManager {
+    - _posts : BasePost[]
+
+    -- methods --
+    + get(id) : BasePost
+    + create()
+    + delete(postId)
+    + has(postId)
+
+    == Errors ==
+    + PostNotFoundError()
+}
+
+PostManager "root" *--> BasePost : contains
+
+
+class BasePost {
+    - _author : BaseUser
+    - _title : string
+    - _body : string
+    - _date : Date
+    - _upvotes : number
+
+    -- managers --
+    - _commentManager isRoot=true : CommentManager
+    - _clicksList : simpleUserManager
+    - _upvoteList : simpleUserManager
+
+    -- related --
+    - _postManager : PostManager // default
+
+    -- methods --
+    + addUpvote(user: BaseUser)
+    + remUpvote(user: BaseUser)
+    + addClick(user: BaseUser)
+
+    __ basic getters __
+    + all..
+
+    == Errors ==
+    + UserAlreadyUpvotedError
+    + UserNotUpvotedError()
+}
+
+BasePost *--> CommentManager : manager
+BasePost --> PostManager : "parent"
+
+
+class CommentManager {
+    - _level : number // root is 1
+    - _comments : BaseComment[]
+    - _isRoot : bool // if yes,
+        than parent is type of BasePost,
+        if not, parent is type of BaseComment
+    - _preId : string
+
+    -- realated --
+    - _post : BasePost //
+    - _parent : BasePost | BaseComment
+
+    -- methods --
+    + getComment(id) : Comment
+    + getComment(bigId) : Comment
+        // tests if the bigId startsWith self _preId
+        // else throw new error
+
+    + create() : BaseComment
+
+    + hasDirectSubComment(bigId | subCommentId)
+        // id = bigId - _preId
+
+    == Errors ==
+    + CommentNotFoundError()
+    + InvalidBigId()
+}
+
+CommentManager *--> "many" BaseComment : contains
+CommentManager --> BasePost : points
+CommentManager *--> "many" BaseComment : contains
+
+
+class BaseComment {
+    - _author
+    - _body
+    - _date
+    - _upvotes
+    - _upvoteList
+    - _id
+    - _globalId
+
+    -- managers --
+    - _commentManager : CommentManager
+
+    -- related --
+    + _parent : CommentManager
+    + _post : BasePost
+
+    -- getters --
+    + all...
+
+    == Errors ==
+    + UserAlreadyUpvotedError
+    + UserNotUpvotedError()
+}
+
+BaseComment *--> "1" CommentManager : contains
+BaseComment --> "parent" CommentManager : points
+BaseComment "1" *-->  "1" UsersUpvotedList : contains
+
+
+class UserCommentManager {
+    - _level : number // root is 1
+    - _comments : BaseComment[]
+    - _isRoot : bool // if yes,
+        than parent is type of BasePost,
+        if not, parent is type of BaseComment
+    - _preId : string
+
+    -- realated --
+    - _post : BasePost //
+    - _parent : BasePost | BaseComment
+
+    -- methods --
+    + getComment(id) : Comment
+    + getComment(bigId) : Comment
+        // tests if the bigId startsWith self _preId
+        // else throw new error
+
+    + hasDirectSubComment(bigId | subCommentId)
+        // id = bigId - _preId
+
+    == Errors ==
+    + CommentNotFoundError()
+    + InvalidBigId()
+}
+
+UserCommentManager "1" --> "many" BaseComment : points
+UserCommentManager "1" --> "1" BaseUser : points
+
+
+class UserPostManager {
+    - _posts : BasePost[]
+
+    -- methods --
+    + get(id) : BasePost
+    + add(post: BasePost)
+    + delete(postId)
+    + has(postId)
+
+    == Errors ==
+    + PostNotFoundError()
+}
+
+UserPostManager "1" --> "many" BasePost : points
+UserPostManager "1" ---> "1" BaseUser : points
+
+
+class BaseUser {
+    -- private --
+    - _username : string
+    - _userCommentManager : UserCommentManager
+    - _userPostManager : UserPostManager
+
+    -- methods --
+    + changePassword()
+
+    -- getters --
+    + all ...
+
+    __ encrypted __
+    - _password: string // hash only visualisation
+}
+
+BaseUser "any" --> "root" UserManager : points
+BaseUser "1" *--> "1" UserPostManager : contains
+BaseUser "1" *--> "1" UserCommentManager : contains
+
+
+class UserManager {
+    - _users : BaseUser[]
+
+    -- methods --
+    + create() : BaseUser throws UserAlreadyExistsError
+    + delete() throws UserNotFoundError
+    + getUserById(id) : BaseUser throws UserNotFoundError
+
+    == Errors ==
+    + UserNotFoundError()
+    + UserAlreadyExistsError()
+}
+
+UserManager "1" *--> "many" BaseUser : contains
+
+
+class UsersUpvotedList {
+    - _list = BaseUser[]
+
+    -- methods --
+    + add(user)
+    + remove(uuid) throws UserNotFoundError
+    + has(uuid)
+
+    == Errors ==
+    + UserNotFoundError()
+}
+
+UsersUpvotedList "1" --> "many" BaseUser : points
+
+
+
+@enduml
+
+@startmindmap
+* Endpoints:
+* UserManager
+** getUserById(id): BaseUser
+*** changePassword(new password)
+*** changeUsername(new username)
+*** getPosts(): BasePost[]
+
+** createUser(username, password, avatarUrl)
+** createUser(username, password)
+
+* PostManager
+** getPostById(id)
+
+@endmindmap

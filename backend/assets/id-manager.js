@@ -1,43 +1,45 @@
 "use strict"
-
+import { UniqueArray } from './modified-array.js';
 export class IdManager {
-    idCache = new UniqueArray();
-    min
-    max
+    _idCache = new UniqueArray();
+    _min
+    _max
 
     constructor(min, max) { // throws IdManager.IdManagerException
         if (typeof min !== typeof 1 || typeof max !== typeof 1) {
-            throw new this.IdManager.IdManagerException('Type of min or max is NaN');
+            throw new this.IdManager.IdManagerException('Type of _min or _max is NaN');
         } else {
-            this.min = min;
-            this.max = max;
+            this._min = min;
+            this._max = max;
 
         }
     }
 
     add(id) { // throws NumberAlreadyExistsError
-        this.idCache.add(id);
+        this._idCache.add(id);
     }
 
     remove(id) { // throws NumberNotFoundError
-        this.idCache.rem(id);
+        this._idCache.rem(id);
     }
 
     gen() {
-        if (this.idCache.isEmpty()) {
-            return this.min;
+        if (this._idCache.isEmpty()) {
+            this.add(this._min);
+            return this._min;
         } else {
-            let id = this.idCache.get(this.idCache.length() - 1) + 1;
-            if (id > this.max) {
-                throw new this.IdManager.IdManagerException(`IdManager has reached its maximum capacity of ${this.max}`);
+            let id = this._idCache.get(this._idCache.length() - 1) + 1;
+            if (id > this._max) {
+                throw new IdManager.IdManagerException(`IdManager has reached its maximum capacity of ${numberWithCommas(this._max - this._min)} with range ${numberWithCommas(this._min)} to ${numberWithCommas(this._max)}`);
             } else {
+                this.add(id);
                 return id;
             }
         }
     }
 
     has(id) {
-        return this.idCache.has(id);
+        return this._idCache.has(id);
     }
 
 }
@@ -48,3 +50,8 @@ IdManager.IdManagerException = class extends Error {
         this.name = this.constructor.name;
     }
 };
+
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
